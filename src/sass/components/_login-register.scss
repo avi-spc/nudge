@@ -1,0 +1,66 @@
+.log-in,
+.sign-up {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	&__logo-p-form {
+		display: grid;
+		justify-items: center;
+
+		padding: 8rem 8rem 5rem 8rem;
+		text-align: center;
+
+		background-color: $color-surface-primary;
+		border-radius: $border-radius-large;
+	}
+
+	&__logo {
+		font-family: 'Libre Barcode 39 Text', cursive;
+		font-size: 12.8rem;
+		color: $color-text-primary;
+	}
+
+	&__form {
+		margin-top: 8rem;
+
+		& > input:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+
+		& > input[type='submit'] {
+			margin-top: 3rem;
+		}
+	}
+
+	&__profile-setup-info {
+		display: inline-block;
+		margin-bottom: 5rem;
+		padding: 1.5rem 3rem;
+		color: $color-text-secondary;
+
+		background-color: $color-surface-quarternary;
+		border-radius: $border-radius-large;
+	}
+}
+
+.sign-up {
+	&__profile-avatar-upload {
+		display: grid;
+		grid-template-rows: repeat(3, max-content);
+		justify-items: center;
+		align-items: center;
+		grid-gap: 5rem;
+
+		margin-top: 8rem;
+
+		div {
+			width: 15rem;
+			height: 15rem;
+
+			background-color: $color-accent-primary;
+			border-radius: 50%;
+		}
+	}
+}

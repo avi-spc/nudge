@@ -1,0 +1,43 @@
+.title-header-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 2rem 2rem 2rem 3rem;
+
+	color: $color-text-primary;
+
+	background-color: $color-surface-header;
+	border-radius: $border-radius-medium;
+
+	::first-letter {
+		text-transform: capitalize;
+	}
+}
+
+.user-header-bar {
+	display: grid;
+	grid-template-columns: max-content 1fr max-content;
+	grid-gap: 2.5rem;
+	align-items: center;
+
+	position: relative;
+	z-index: 20;
+	padding: 2rem;
+
+	color: $color-text-primary;
+	border-radius: $border-radius-medium;
+
+	&__btn-more {
+		color: $color-text-primary;
+		border-radius: 50%;
+		border: thin solid transparent;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color-surface-secondary;
+			border: thin solid $color-border-primary;
+		}
+	}
+}

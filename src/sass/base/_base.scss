@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 45%;
+
+	overflow-x: hidden;
+}
+
+body {
+	font-family: 'Fredoka', sans-serif;
+	background-color: $color-background;
+}
+
+input,
+input::placeholder,
+button,
+textarea {
+	font-family: 'Fredoka', sans-serif;
+	resize: none;
+}
+
+input,
+textarea {
+	color: $color-text-primary;
+}
+
+input::placeholder {
+	color: $color-text-tertiary;
+}
+
+a,
+a:link,
+a:visited {
+	color: $color-text-primary;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $color-accent-primary;
+}
+
+li:hover {
+	color: $color-accent-primary;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	object-fit: cover;
+}

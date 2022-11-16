@@ -1,0 +1,83 @@
+.btn {
+	color: $color-text-accent;
+
+	background-color: $color-accent-primary;
+	border-style: none;
+	cursor: pointer;
+
+	&:disabled {
+		color: $color-text-disabled;
+		background-color: $color-accent-tertiary;
+		cursor: auto;
+
+		&:hover {
+			background-color: $color-accent-tertiary;
+		}
+	}
+
+	&:hover {
+		background-color: $color-accent-secondary;
+	}
+
+	&--rect-lg {
+		border-radius: $border-radius-normal;
+		padding: 2.5rem 5rem;
+	}
+
+	&--rect-sm {
+		border-radius: $border-radius-normal;
+		padding: 1.5rem 3rem;
+	}
+
+	&--rect-es {
+		margin-top: 1.2rem;
+		border-radius: $border-radius-small;
+		padding: 1rem 2rem;
+	}
+
+	&--cir {
+		border-radius: 10rem;
+		padding: 0.8rem;
+
+		line-height: 0;
+	}
+}
+
+.btn--danger {
+	padding: 1.5rem 3rem;
+	width: 100%;
+
+	color: $color-text-error;
+	background-color: $color-surface-error;
+	border-radius: $border-radius-small;
+	border-style: none;
+
+	cursor: pointer;
+
+	&:hover {
+		background-color: #ffb8b0;
+	}
+}
+
+.btn-alternate {
+	margin-top: 2rem;
+	padding: 3.3rem 0;
+	width: 100%;
+
+	color: $color-text-secondary;
+	text-align: center;
+
+	background-color: $color-surface-quarternary;
+	border-radius: $border-radius-medium;
+	border: thin solid $color-border-primary;
+
+	cursor: pointer;
+
+	&:hover {
+		background-color: $color-surface-secondary;
+	}
+
+	span {
+		color: $color-text-primary;
+	}
+}

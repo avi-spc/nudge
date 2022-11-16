@@ -1,0 +1,15 @@
+.text-field {
+	width: 100%;
+
+	background-color: $color-surface-quarternary;
+	border-radius: $border-radius-normal;
+	border-style: none;
+
+	&--lg {
+		padding: 2.8rem;
+	}
+
+	&--sm {
+		padding: 2rem;
+	}
+}

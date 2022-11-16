@@ -1,0 +1,57 @@
+.update-profile {
+	color: $color-text-primary;
+
+	&__form-p-avatar {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-gap: 6.3rem;
+
+		padding: 4rem;
+	}
+
+	&__form {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		grid-gap: 1.5rem 4.4rem;
+
+		justify-items: right;
+		align-items: center;
+	}
+
+	&__avatar {
+		width: 10rem;
+		height: 10rem;
+
+		background-color: #f7d047;
+		border-radius: 50%;
+	}
+
+	&__avatar-p-username {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		grid-column-gap: 4rem;
+	}
+
+	&__btn-save {
+		grid-column: 2/-1;
+		justify-self: end;
+		align-self: end;
+	}
+
+	&__image {
+		width: 50rem;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		ul {
+			padding: 3rem;
+			text-align: center;
+		}
+
+		li:not(:first-child) {
+			margin-top: 2.5rem;
+		}
+	}
+}

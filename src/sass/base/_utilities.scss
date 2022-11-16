@@ -1,0 +1,90 @@
+.container-small {
+	max-width: 65rem;
+	margin: 0 auto;
+}
+
+.container-normal {
+	max-width: 80rem;
+	margin: 8rem auto;
+}
+
+.container-medium {
+	max-width: 100rem;
+	margin: 8rem auto;
+}
+
+.container-large {
+	max-width: 130rem;
+	margin: 8rem auto;
+}
+
+.avatar {
+	width: 5rem;
+	height: 5rem;
+
+	background-color: #f7d047;
+	border-radius: 50%;
+}
+
+.padded {
+	padding: 1rem;
+
+	background-color: $color-surface-primary;
+	border-radius: $border-radius-large;
+}
+
+.absolute {
+	position: absolute;
+	right: 1rem;
+}
+
+.bordered {
+	border: thin solid $color-border-primary;
+}
+
+.hidden {
+	display: none;
+}
+
+.active {
+	[class*='symbol'] {
+		font-variation-settings: 'FILL' 1;
+	}
+}
+
+.expand {
+	width: 100%;
+}
+
+.material-symbols-outlined {
+	&.symbol--lg {
+		font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 200, 'opsz' 48;
+	}
+
+	&.symbol--md {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 100, 'opsz' 20;
+	}
+
+	&.symbol--sm {
+		font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' -25, 'opsz' 20;
+	}
+
+	&.filled {
+		font-variation-settings: 'FILL' 1;
+	}
+}
+
+.popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+
+	background-color: rgba($color-text-primary, 0.5);
+}

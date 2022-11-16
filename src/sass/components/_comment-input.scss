@@ -1,0 +1,18 @@
+.comment-input {
+	&__form {
+		display: flex;
+		align-items: center;
+
+		background-color: $color-surface-quarternary;
+		border-radius: $border-radius-medium;
+	}
+
+	&__btn-post-container {
+		padding: 1rem;
+	}
+
+	&__btn-post {
+		border-radius: 10rem;
+		padding: 2rem 1rem;
+	}
+}

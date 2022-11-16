@@ -1,0 +1,82 @@
+.notification-actions {
+	position: relative;
+
+	label {
+		cursor: pointer;
+
+		&:hover {
+			color: $color-accent-primary;
+		}
+	}
+
+	input[type='checkbox'] {
+		display: none;
+
+		&:checked ~ label span {
+			font-variation-settings: 'FILL' 1;
+		}
+
+		&:not(:checked) ~ .navbar__notifications {
+			display: none;
+		}
+	}
+}
+
+.navbar__notifications {
+	position: absolute;
+	top: 150%;
+	z-index: 1000;
+	width: 50rem;
+
+	color: $color-text-primary;
+
+	.indicator {
+		position: absolute;
+		top: -5%;
+		width: 1.2rem;
+		height: 1.2rem;
+
+		background-color: $color-text-primary;
+		border-radius: 50%;
+	}
+
+	.individual-notification {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	li a {
+		display: flex;
+		align-items: flex-start;
+		padding: 2.5rem;
+
+		border-radius: $border-radius-medium;
+
+		&.unread {
+			background-color: $color-surface-secondary;
+		}
+
+		.avatar {
+			align-self: center;
+		}
+		.username-p-message {
+			flex-grow: 1;
+			margin-left: 2.5rem;
+		}
+
+		.message {
+			margin-top: 1rem;
+		}
+
+		.elapsed {
+			justify-self: flex-end;
+			padding: 0.8rem 1rem;
+
+			color: $color-text-secondary;
+
+			background-color: $color-surface-primary;
+			border-radius: $border-radius-large;
+		}
+	}
+}
