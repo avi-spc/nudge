@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { baseUrl } from '../../../utils/env';
+
 const UserSavedPostGallery = (props) => {
 	const { getSavedPosts, savedPosts } = props;
 
@@ -18,7 +20,7 @@ const UserSavedPostGallery = (props) => {
 						saved.post.imageId && (
 							<Link to={`/post/${saved.post._id}`} key={saved.post._id}>
 								<img
-									src={`http://localhost:5000/api/posts/image/${saved.post.imageId}`}
+									src={`${baseUrl}/api/posts/image/${saved.post.imageId}`}
 									className="gallery-post"
 								></img>
 							</Link>

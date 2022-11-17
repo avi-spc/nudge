@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { baseUrl } from '../../../utils/env';
+
 const UserPostGallery = (props) => {
 	const { posts } = props;
 
@@ -10,7 +12,7 @@ const UserPostGallery = (props) => {
 				posts.map((post) => (
 					<Link to={`/post/${post.post}`} key={post.post}>
 						<img
-							src={`http://localhost:5000/api/posts/image/${post.imageId}`}
+							src={`${baseUrl}/api/posts/image/${post.imageId}`}
 							className="gallery-post"
 						></img>
 					</Link>

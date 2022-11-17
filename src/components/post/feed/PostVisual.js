@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import { baseUrl } from '../../../utils/env';
+
 import UserHeaderBar from '../../headerBars/UserHeaderBar';
 
 const PostVisual = (props) => {
@@ -8,10 +10,7 @@ const PostVisual = (props) => {
 	return (
 		<div className="padded feed-individual-post__post-visual">
 			<UserHeaderBar postId={post._id} user={post.user} />
-			<img
-				src={`http://localhost:5000/api/posts/image/${post.imageId}`}
-				className="image"
-			></img>
+			<img src={`${baseUrl}/api/posts/image/${post.imageId}`} className="image"></img>
 		</div>
 	);
 };

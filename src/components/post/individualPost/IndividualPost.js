@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { getIndividualPost } from '../../../reduxStore/actions/post';
+import { baseUrl } from '../../../utils/env';
 
 import IndividualComment from './IndividualComment';
 import PostActions from '../PostActions';
@@ -31,9 +32,7 @@ const IndividualPost = (props) => {
 			<div className="container-large">
 				<div className="padded individual-post">
 					<div className="individual-post__image">
-						<img
-							src={`http://localhost:5000/api/posts/image/${individualPost.imageId}`}
-						></img>
+						<img src={`${baseUrl}/api/posts/image/${individualPost.imageId}`}></img>
 					</div>
 					<PostCaption post={individualPost} />
 					<div className="individual-post__comments-list">

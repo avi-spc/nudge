@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { publishPost, discardPostImage } from '../../../reduxStore/actions/post';
 import { useForm } from '../../../hooks/useForm';
 import { isEmpty } from '../../../utils/validator';
+import { baseUrl } from '../../../utils/env';
 
 import TitleHeaderBar from '../../headerBars/TitleHeaderBar';
 import Avatar from '../../Avatar';
@@ -36,7 +37,7 @@ const PublishPost = (props) => {
 			/>
 			<div className="create-post__image-p-caption">
 				<div className="create-post__image">
-					<img src={`http://localhost:5000/api/posts/image/${newPostImageId}`}></img>
+					<img src={`${baseUrl}/api/posts/image/${newPostImageId}`}></img>
 				</div>
 				<div className="create-post__user-p-caption">
 					<div className="user-details">
