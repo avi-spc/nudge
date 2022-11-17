@@ -23,12 +23,14 @@ const PostFeed = (props) => {
 	}, []);
 
 	return (
-		<div className="container-normal feed">
-			{posts.map((post) => {
-				return <FeedIndividualPost post={post} key={post._id} />;
-			})}
-			{postOptions.isVisible && <PostOptions postIsMine={postOptions.isMine} />}
-		</div>
+		posts && (
+			<div className="container-normal feed">
+				{posts.map((post) => {
+					return <FeedIndividualPost post={post} key={post._id} />;
+				})}
+				{postOptions.isVisible && <PostOptions postIsMine={postOptions.isMine} />}
+			</div>
+		)
 	);
 };
 
