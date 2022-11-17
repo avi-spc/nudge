@@ -1,4 +1,5 @@
 import axios from '../../utils/axiosInstance';
+import NProgress from 'nprogress';
 
 import { setAlert } from './alert';
 import { setLoading } from './auth';
@@ -26,6 +27,8 @@ export const getPersonalProfile = () => async (dispatch) => {
 };
 
 export const getUserProfile = (userId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const resProfile = await axios.get(`/api/profile/user/${userId}`);
 		const resFollows = await axios.get(`/api/users/follows/${userId}`);
@@ -34,7 +37,8 @@ export const getUserProfile = (userId) => async (dispatch) => {
 			type: GET_USER_PROFILE_SUCCESS,
 			payload: { profile: resProfile.data.profile, follows: resFollows.data.follows }
 		});
-		// dispatch(setLoading(false));
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
@@ -43,7 +47,8 @@ export const getUserProfile = (userId) => async (dispatch) => {
 		});
 
 		dispatch({ type: GET_USER_PROFILE_ERROR });
-		// dispatch(setLoading(false));
+
+		NProgress.done();
 	}
 };
 
@@ -71,6 +76,8 @@ export const createProfile = (profile) => async (dispatch) => {
 };
 
 export const updateProfile = (profile) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -83,6 +90,8 @@ export const updateProfile = (profile) => async (dispatch) => {
 		const res = await axios.put('/api/profile', body, config);
 
 		dispatch({ type: UPDATE_PROFILE, payload: res.data });
+
+		NProgress.done(true);
 		dispatch(setAlert(res.data.msg, res.data.type));
 	} catch (err) {
 		const errors = err.response.data.errors;
@@ -94,6 +103,8 @@ export const updateProfile = (profile) => async (dispatch) => {
 };
 
 export const uploadProfileImage = (formData) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-type': 'multipart/formdata',
@@ -107,6 +118,8 @@ export const uploadProfileImage = (formData) => async (dispatch) => {
 		const res = await axios.put('/api/profile/image', body, config);
 
 		dispatch({ type: UPDATE_PROFILE, payload: res.data });
+
+		NProgress.done();
 		dispatch(setAlert(res.data.msg, res.data.type));
 	} catch (err) {
 		const errors = err.response.data.errors;
@@ -118,10 +131,14 @@ export const uploadProfileImage = (formData) => async (dispatch) => {
 };
 
 export const removeProfileImage = () => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.delete('/api/profile/image');
 
 		dispatch({ type: UPDATE_PROFILE, payload: res.data });
+
+		NProgress.done();
 		dispatch(setAlert(res.data.msg, res.data.type));
 	} catch (err) {
 		console.log(err.response.data.errors);

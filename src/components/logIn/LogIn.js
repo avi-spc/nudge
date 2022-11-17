@@ -27,7 +27,6 @@ const LogIn = (props) => {
 		e.preventDefault();
 
 		login(user);
-		resetForm();
 	};
 
 	const { formData: user, onChange, resetForm } = useForm({ email: '', password: '' });

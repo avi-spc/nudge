@@ -1,4 +1,5 @@
 import axios from '../../utils/axiosInstance';
+import NProgress from 'nprogress';
 
 import { setAuthToken } from '../../utils/setAuthToken';
 import { setAlert } from './alert';
@@ -38,6 +39,8 @@ export const retrieveUser = () => async (dispatch) => {
 };
 
 export const register = (user) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -51,6 +54,8 @@ export const register = (user) => async (dispatch) => {
 
 		dispatch({ type: REGISTER_SUCCESS, payload: res.data });
 		dispatch(retrieveUser());
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
@@ -59,10 +64,14 @@ export const register = (user) => async (dispatch) => {
 		});
 
 		dispatch({ type: REGISTER_ERROR });
+
+		NProgress.done();
 	}
 };
 
 export const login = (user) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -84,6 +93,8 @@ export const login = (user) => async (dispatch) => {
 		});
 
 		dispatch({ type: LOGIN_ERROR });
+
+		NProgress.done();
 	}
 };
 

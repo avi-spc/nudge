@@ -1,7 +1,7 @@
 import axios from '../../utils/axiosInstance';
+import NProgress from 'nprogress';
 
 import { setAlert } from './alert';
-import { setLoading } from './auth';
 
 import {
 	GET_ALL_POSTS,
@@ -18,23 +18,28 @@ import {
 } from './types';
 
 export const getAllPosts = () => async (dispatch) => {
-	// dispatch(setLoading(true));
+	NProgress.start();
 
 	try {
 		const res = await axios.get('/api/posts');
 
 		dispatch({ type: GET_ALL_POSTS, payload: res.data });
-		// dispatch(setLoading(false));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err.response.data.errors);
 	}
 };
 
 export const getIndividualPost = (postId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.get(`/api/posts/${postId}`);
 
 		dispatch({ type: GET_INDIVIDUAL_POST_SUCCESS, payload: res.data });
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
@@ -43,6 +48,8 @@ export const getIndividualPost = (postId) => async (dispatch) => {
 		});
 
 		dispatch({ type: GET_INDIVIDUAL_POST_ERROR });
+
+		NProgress.done();
 	}
 };
 
@@ -124,6 +131,8 @@ export const removeComment = (postId, commentId) => async (dispatch) => {
 };
 
 export const uploadPostImage = (formData) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-type': 'multipart/formdata',
@@ -137,12 +146,16 @@ export const uploadPostImage = (formData) => async (dispatch) => {
 		const res = await axios.post('/api/posts/image', body, config);
 
 		dispatch({ type: POST_IMAGE_UPLOAD_SUCCESS, payload: res.data });
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
 		errors.forEach((error) => {
 			dispatch(setAlert(error.msg, 'error'));
 		});
+
+		NProgress.done();
 	}
 };
 
@@ -158,6 +171,8 @@ export const discardPostImage = (imageId) => async (dispatch) => {
 };
 
 export const publishPost = (newPost) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -171,22 +186,29 @@ export const publishPost = (newPost) => async (dispatch) => {
 
 		dispatch({ type: POST_UPLOAD_SUCCESS });
 		dispatch(setAlert(res.data.msg, res.data.type));
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
 		errors.forEach((error) => {
 			dispatch(setAlert(error.msg, 'error'));
 		});
+
+		NProgress.done();
 	}
 };
 
 export const deletePost = (postId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.delete(`/api/posts/${postId}`);
 
 		dispatch({ type: UPDATE_ALL_POSTS, payload: postId });
 		dispatch(setAlert(res.data.msg, res.data.type));
 	} catch (err) {
+		NProgress.done();
 		console.log(err.response.data.errors);
 	}
 };
