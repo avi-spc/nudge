@@ -5,6 +5,10 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 
+	@include responsive(phone) {
+		min-width: 55rem;
+	}
+
 	&__logo-p-form {
 		display: grid;
 		justify-items: center;

@@ -10,6 +10,9 @@
 html {
   font-size: 45%;
   overflow-x: hidden; }
+  @media screen and (max-width: 37.5em) {
+    html {
+      font-size: 40%; } }
 
 body {
   font-family: 'Fredoka', sans-serif;
@@ -79,6 +82,10 @@ img {
 .container-normal {
   max-width: 80rem;
   margin: 8rem auto; }
+  @media screen and (max-width: 37.5em) {
+    .container-normal {
+      margin: 2rem auto;
+      padding: 0 2rem; } }
 
 .container-medium {
   max-width: 100rem;
@@ -546,6 +553,10 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+  @media screen and (max-width: 37.5em) {
+    .log-in,
+    .sign-up {
+      min-width: 55rem; } }
   .log-in__logo-p-form,
   .sign-up__logo-p-form {
     display: grid;
