@@ -5,7 +5,7 @@ import NavUserSearch from './NavUserSearch';
 
 const Navbar = () => {
 	return (
-		<div className="navbar">
+		<div className="navbar primary">
 			<Link to="/feed">
 				<div className="navbar__logo">nudge</div>
 			</Link>

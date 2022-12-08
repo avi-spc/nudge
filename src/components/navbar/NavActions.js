@@ -19,10 +19,12 @@ const NavActions = (props) => {
 
 	useEffect(() => {
 		setShowDropdown(false);
+		setShowNotificationDropdown(false);
 		notificationRef.current.checked = false;
 	}, [location]);
 
 	const [showDropdown, setShowDropdown] = useState(false);
+	const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
 
 	return (
 		<div className="navbar__actions">
@@ -35,9 +37,16 @@ const NavActions = (props) => {
 			<div className="notification-actions">
 				<input type="checkbox" id="notification-dropdown" ref={notificationRef} />
 				<label htmlFor="notification-dropdown">
-					<span className="material-symbols-outlined symbol--lg">favorite</span>
+					<span
+						className={`material-symbols-outlined symbol--lg ${
+							showNotificationDropdown ? 'filled' : ''
+						}`}
+						onClick={() => setShowNotificationDropdown(!showNotificationDropdown)}
+					>
+						favorite
+					</span>
 				</label>
-				<NavNotifications />
+				{showNotificationDropdown && <NavNotifications />}
 			</div>
 			<div className="profile-actions" onClick={() => setShowDropdown(!showDropdown)}>
 				<Avatar imageId={personalProfile.imageId} classType="avatar" />

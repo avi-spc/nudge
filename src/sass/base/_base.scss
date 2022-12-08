@@ -7,6 +7,12 @@
 			@content;
 		}
 	}
+
+	@if ($breakpoint==laptop_s) {
+		@media screen and (max-width: 73.75em) {
+			@content;
+		}
+	}
 }
 
 *,

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Navbar from './navbar/Navbar';
+import NavbarFooter from './navbar/NavbarFooter';
 
 const PrivateRoute = (props) => {
 	const {
@@ -24,6 +25,7 @@ const PrivateRoute = (props) => {
 			<Fragment>
 				<Navbar />
 				<Outlet />
+				<NavbarFooter />
 			</Fragment>
 		)
 	);

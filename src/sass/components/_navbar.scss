@@ -3,7 +3,15 @@
 	justify-content: space-between;
 	align-items: center;
 
-	padding: 1.5rem 42rem;
+	padding: 1.5rem 20%;
+
+	@include responsive(phone) {
+		& > :not(:first-child) {
+			display: none;
+		}
+
+		justify-content: center;
+	}
 
 	color: $color-text-primary;
 	background-color: $color-surface-secondary;
@@ -19,6 +27,12 @@
 		align-items: center;
 		grid-gap: 0 2rem;
 
+		@include responsive(phone) {
+			display: flex;
+			justify-content: space-between;
+			flex: 1 1 auto;
+		}
+
 		.profile-actions {
 			position: relative;
 			cursor: pointer;
@@ -29,6 +43,12 @@
 				left: 50%;
 				transform: translateX(-50%);
 				z-index: 100;
+
+				@include responsive(phone) {
+					top: -225%;
+					left: -50%;
+					// transform: translateX(-50%);
+				}
 
 				padding: 2rem 3rem;
 
@@ -89,5 +109,20 @@
 				font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 100, 'opsz' 20;
 			}
 		}
+	}
+}
+
+.footer {
+	display: none;
+
+	@include responsive(phone) {
+		display: block;
+		position: fixed;
+		width: 100%;
+
+		bottom: 0;
+		z-index: 2000;
+
+		padding: 1.5rem 3%;
 	}
 }
