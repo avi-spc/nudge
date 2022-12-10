@@ -4,6 +4,11 @@
 	grid-gap: 0 7.5rem;
 	align-items: center;
 
+	@include responsive(phone) {
+		grid-template-columns: 1fr;
+		grid-gap: 4rem;
+	}
+
 	padding: 4rem;
 
 	color: $color-text-primary;
@@ -14,6 +19,8 @@
 
 		background-color: #f7d047;
 		border-radius: 50%;
+
+		justify-self: center;
 	}
 
 	&__details {
@@ -118,6 +125,10 @@
 	.gallery-post {
 		width: 100%;
 		height: 31.3rem;
+
+		@include responsive(phone) {
+			height: auto;
+		}
 
 		background-color: $color-surface-secondary;
 		border-radius: $border-radius-normal;

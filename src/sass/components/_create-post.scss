@@ -1,15 +1,29 @@
 .create-post {
+	@include responsive(phone) {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+
 	&__image-p-caption {
 		display: grid;
 		grid-template-columns: min-content 1fr;
 		grid-gap: 0 3rem;
 
 		margin-top: 1rem;
+
+		@include responsive(phone) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__image {
 		width: 53rem;
 		height: 53rem;
+
+		@include responsive(phone) {
+			width: 100%;
+			height: auto;
+		}
 
 		background-color: $color-surface-secondary;
 		border-radius: $border-radius-medium;
@@ -69,6 +83,11 @@
 }
 
 .image-upload {
+	@include responsive(phone) {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+
 	&__buttons {
 		display: flex;
 		flex-direction: column;

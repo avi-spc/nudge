@@ -90,6 +90,10 @@ img {
 .container-medium {
   max-width: 100rem;
   margin: 8rem auto; }
+  @media screen and (max-width: 37.5em) {
+    .container-medium {
+      margin: 2rem auto 10rem;
+      padding: 0 2rem; } }
 
 .container-large {
   max-width: 130rem;
@@ -244,11 +248,19 @@ img {
   border-radius: 10rem;
   padding: 2rem 1rem; }
 
+@media screen and (max-width: 37.5em) {
+  .create-post {
+    margin-left: 2rem;
+    margin-right: 2rem; } }
+
 .create-post__image-p-caption {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-gap: 0 3rem;
   margin-top: 1rem; }
+  @media screen and (max-width: 37.5em) {
+    .create-post__image-p-caption {
+      grid-template-columns: 1fr; } }
 
 .create-post__image {
   width: 53rem;
@@ -258,6 +270,10 @@ img {
   display: flex;
   align-items: center;
   overflow: hidden; }
+  @media screen and (max-width: 37.5em) {
+    .create-post__image {
+      width: 100%;
+      height: auto; } }
   .create-post__image img {
     width: 100%; }
 
@@ -289,6 +305,11 @@ img {
 .create-post__btn-publish {
   margin-top: 2rem;
   align-self: end; }
+
+@media screen and (max-width: 37.5em) {
+  .image-upload {
+    margin-left: 2rem;
+    margin-right: 2rem; } }
 
 .image-upload__buttons {
   display: flex;
@@ -634,7 +655,7 @@ img {
         top: 125%;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 100;
+        z-index: 10000;
         padding: 2rem 3rem;
         text-align: center;
         background-color: #2c2c2c;
@@ -749,11 +770,16 @@ img {
   align-items: center;
   padding: 4rem;
   color: #d9d9d9; }
+  @media screen and (max-width: 37.5em) {
+    .user-profile {
+      grid-template-columns: 1fr;
+      grid-gap: 4rem; } }
   .user-profile__avatar {
     width: 25rem;
     height: 25rem;
     background-color: #f7d047;
-    border-radius: 50%; }
+    border-radius: 50%;
+    justify-self: center; }
   .user-profile__details {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -823,6 +849,9 @@ img {
     height: 31.3rem;
     background-color: #242424;
     border-radius: 2rem; }
+    @media screen and (max-width: 37.5em) {
+      .posts-gallery .gallery-post {
+        height: auto; } }
 
 .update-profile {
   color: #d9d9d9; }
