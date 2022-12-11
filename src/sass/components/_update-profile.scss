@@ -1,12 +1,21 @@
 .update-profile {
 	color: $color-text-primary;
 
+	@include responsive(phone) {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+
 	&__form-p-avatar {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		grid-gap: 6.3rem;
 
 		padding: 4rem;
+
+		@include responsive(phone) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__form {
@@ -30,12 +39,21 @@
 		display: grid;
 		grid-template-columns: max-content 1fr;
 		grid-column-gap: 4rem;
+
+		@include responsive(phone) {
+			grid-row-gap: 6.3rem;
+		}
 	}
 
 	&__btn-save {
 		grid-column: 2/-1;
 		justify-self: end;
 		align-self: end;
+
+		@include responsive(phone) {
+			grid-column: 1 / -1;
+			justify-self: stretch;
+		}
 	}
 
 	&__image {

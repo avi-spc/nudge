@@ -855,11 +855,18 @@ img {
 
 .update-profile {
   color: #d9d9d9; }
+  @media screen and (max-width: 37.5em) {
+    .update-profile {
+      margin-left: 2rem;
+      margin-right: 2rem; } }
   .update-profile__form-p-avatar {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 6.3rem;
     padding: 4rem; }
+    @media screen and (max-width: 37.5em) {
+      .update-profile__form-p-avatar {
+        grid-template-columns: 1fr; } }
   .update-profile__form {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -875,10 +882,17 @@ img {
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-column-gap: 4rem; }
+    @media screen and (max-width: 37.5em) {
+      .update-profile__avatar-p-username {
+        grid-row-gap: 6.3rem; } }
   .update-profile__btn-save {
     grid-column: 2/-1;
     justify-self: end;
     align-self: end; }
+    @media screen and (max-width: 37.5em) {
+      .update-profile__btn-save {
+        grid-column: 1 / -1;
+        justify-self: stretch; } }
   .update-profile__image {
     width: 50rem;
     position: fixed;
