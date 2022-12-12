@@ -7,7 +7,7 @@
 	max-width: 80rem;
 	margin: 8rem auto;
 
-	@include responsive(phone){
+	@include responsive(phone) {
 		margin: 2rem auto;
 		padding: 0 2rem;
 	}
@@ -17,7 +17,7 @@
 	max-width: 100rem;
 	margin: 8rem auto;
 
-	@include responsive(phone){
+	@include responsive(phone) {
 		margin: 2rem auto 10rem;
 		padding: 0 2rem;
 	}
@@ -26,6 +26,10 @@
 .container-large {
 	max-width: 130rem;
 	margin: 8rem auto;
+
+	@include responsive(phone) {
+		margin: 2rem 2rem 10rem;
+	}
 }
 
 .avatar {

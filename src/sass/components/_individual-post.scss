@@ -9,6 +9,10 @@
 
 	color: $color-text-primary;
 
+	@include responsive(phone) {
+		grid-template-columns: 1fr;
+	}
+
 	&__image {
 		grid-row: 1/-1;
 
@@ -24,6 +28,10 @@
 
 		img {
 			width: 100%;
+		}
+
+		@include responsive(phone) {
+			display: none;
 		}
 	}
 
@@ -144,10 +152,19 @@
 		background-color: $color-surface-tertiary;
 		border-radius: $border-radius-large;
 
+		@include responsive(phone) {
+			grid-template-columns: 1fr;
+		}
+
 		.avatars-p-meta {
 			display: flex;
 			align-items: center;
 			margin-left: 1.5rem;
+
+			@include responsive(phone) {
+				margin-top: 1rem;
+				margin-bottom: 2rem;
+			}
 		}
 
 		.liked-avatars {
