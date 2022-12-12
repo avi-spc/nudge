@@ -7,6 +7,7 @@ import { logout } from '../../reduxStore/actions/auth';
 
 import NavNotifications from './NavNotifications';
 import Avatar from '../Avatar';
+import NavUserSearch from './NavUserSearch';
 
 const NavActions = (props) => {
 	const {
@@ -18,6 +19,7 @@ const NavActions = (props) => {
 	const notificationRef = useRef();
 
 	useEffect(() => {
+		setShowUserSearch(false);
 		setShowDropdown(false);
 		setShowNotificationDropdown(false);
 		notificationRef.current.checked = false;
@@ -25,12 +27,26 @@ const NavActions = (props) => {
 
 	const [showDropdown, setShowDropdown] = useState(false);
 	const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
+	const [showUserSearch, setShowUserSearch] = useState(false);
 
 	return (
 		<div className="navbar__actions">
 			<NavLink to="/feed">
 				<span className="material-symbols-outlined symbol--lg">cottage</span>
 			</NavLink>
+			<div className="user-search">
+				<span
+					className="material-symbols-outlined symbol--lg"
+					onClick={() => setShowUserSearch(!showUserSearch)}
+				>
+					search
+				</span>
+				{showUserSearch && (
+					<div>
+						<NavUserSearch />
+					</div>
+				)}
+			</div>
 			<NavLink to="/create">
 				<span className="material-symbols-outlined symbol--lg">loupe</span>
 			</NavLink>

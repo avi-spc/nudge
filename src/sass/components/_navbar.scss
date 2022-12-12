@@ -33,6 +33,26 @@
 			flex: 1 1 auto;
 		}
 
+		.user-search {
+			display: none;
+
+			& > :nth-child(2) {
+				position: fixed;
+				top: 0;
+				left: 0;
+
+				width: 100%;
+				padding: 2rem;
+				height: 92vh;
+
+				background-color: $color-surface-primary;
+			}
+
+			@include responsive(phone) {
+				display: inline-block;
+			}
+		}
+
 		.profile-actions {
 			position: relative;
 			cursor: pointer;

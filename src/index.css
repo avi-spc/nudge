@@ -663,6 +663,19 @@ img {
         display: flex;
         justify-content: space-between;
         flex: 1 1 auto; } }
+    .navbar__actions .user-search {
+      display: none; }
+      .navbar__actions .user-search > :nth-child(2) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        height: 92vh;
+        background-color: #1e1e1e; }
+      @media screen and (max-width: 37.5em) {
+        .navbar__actions .user-search {
+          display: inline-block; } }
     .navbar__actions .profile-actions {
       position: relative;
       cursor: pointer; }
