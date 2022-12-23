@@ -1,5 +1,7 @@
 # nudge
 
+![Logo](./public/img/logo.png)
+
 ### About
 
 Nudge is an image sharing social networking service that allows users to upload media and share it with their peers.
