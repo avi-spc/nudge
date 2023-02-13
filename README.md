@@ -52,4 +52,28 @@ npm run sass
 
 -   [Redux](https://redux.js.org)
 
+### Screenshots
+
+#### SignIn / SignUp
+
+![SignIn](./public/img/screenshots/signin.png)
+![SignUp](./public/img/screenshots/signup.png)
+
+#### feed
+
+![Feed](./public/img/screenshots/feed.png)
+![FeedPost](./public/img/screenshots/feedpost.png.png)
+
+#### Individual Post
+
+![Post](./public/img/screenshots/post.png)
+
+#### Profile
+
+![Profile](./public/img/screenshots/profile.png)
+![EditProfile](./public/img/screenshots/editprofile.png.png)
+
+#### Create Post
+
+![CreatePost](./public/img/screenshots/createpost.png)
 
