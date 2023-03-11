@@ -62,7 +62,7 @@ npm run sass
 #### feed
 
 ![Feed](./public/img/screenshots/feed.png)
-![FeedPost](./public/img/screenshots/feedpost.png.png)
+![FeedPost](./public/img/screenshots/feedpost.png)
 
 #### Individual Post
 
@@ -71,7 +71,7 @@ npm run sass
 #### Profile
 
 ![Profile](./public/img/screenshots/profile.png)
-![EditProfile](./public/img/screenshots/editprofile.png.png)
+![EditProfile](./public/img/screenshots/editprofile.png)
 
 #### Create Post
 
