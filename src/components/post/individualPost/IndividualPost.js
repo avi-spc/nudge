@@ -12,6 +12,7 @@ import PostCaption from './PostCaption';
 import PostDetails from './PostDetails';
 import PostLikedUsers from './PostLikedUsers';
 import PostOptions from '../PostOptions';
+import { useDocumentTitle } from '../../../hooks/useDcoumentTitle';
 
 const IndividualPost = (props) => {
 	const {
@@ -26,6 +27,8 @@ const IndividualPost = (props) => {
 	}, [post_id]);
 
 	const [showPopup, setShowPopup] = useState(false);
+
+	useDocumentTitle('');
 
 	return (
 		individualPost && (

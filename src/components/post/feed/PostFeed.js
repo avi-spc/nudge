@@ -6,6 +6,7 @@ import { getAllPosts, discardPostImage } from '../../../reduxStore/actions/post'
 
 import FeedIndividualPost from './FeedIndividualPost';
 import PostOptions from '../PostOptions';
+import { useDocumentTitle } from '../../../hooks/useDcoumentTitle';
 
 const PostFeed = (props) => {
 	const {
@@ -21,6 +22,8 @@ const PostFeed = (props) => {
 			discardPostImage(newPostImageId);
 		}
 	}, []);
+
+	useDocumentTitle('');
 
 	return (
 		posts && (

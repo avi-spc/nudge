@@ -10,6 +10,7 @@ import { isEmpty } from '../../utils/validator';
 import TitleHeaderBar from '../headerBars/TitleHeaderBar';
 import UpdateProfileImage from './UpdateProfileImage';
 import Avatar from '../Avatar';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const UpdateProfile = (props) => {
 	const {
@@ -27,6 +28,8 @@ const UpdateProfile = (props) => {
 
 	const { name, username, bio } = personalProfile;
 	const { formData: profile, onChange } = useForm({ name, username, bio });
+
+	useDocumentTitle("Edit profile");
 
 	return (
 		<div className="container-medium padded update-profile">

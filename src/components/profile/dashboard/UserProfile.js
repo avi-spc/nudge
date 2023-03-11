@@ -15,6 +15,7 @@ import { getUserProfile } from '../../../reduxStore/actions/profile';
 import UserPostGallery from './UserPostGallery';
 import UserSavedPostGallery from './UserSavedPostGallery';
 import Avatar from '../../Avatar';
+import { useDocumentTitle } from '../../../hooks/useDcoumentTitle';
 
 const UserProfile = (props) => {
 	const {
@@ -31,20 +32,21 @@ const UserProfile = (props) => {
 
 	const { user_id } = useParams();
 
+	
 	useEffect(() => {
 		// setLoading(true);
 		getUserProfile(user_id);
 		setActiveTab('post');
 	}, [user_id]);
-
+	
 	useEffect(() => {
 		if (newPostImageId) {
 			discardPostImage(newPostImageId);
 		}
-	}, []);
-
+	}, []);	
+	
 	const [activeTab, setActiveTab] = useState('post');
-
+	
 	const editButton = (
 		<Link to="/profile/edit">
 			<button className="btn btn--cir user-profile__btn-edit">
@@ -52,22 +54,24 @@ const UserProfile = (props) => {
 			</button>
 		</Link>
 	);
-
+	
 	const followUnfollowButton = user.follows.following.find((follow) => follow.user === user_id) ? (
 		<button
-			className="btn btn--rect-es user-profile__btn-follow"
-			onClick={() => unfollowUser(user_id)}
+		className="btn btn--rect-es user-profile__btn-follow"
+		onClick={() => unfollowUser(user_id)}
 		>
 			Unfollow
 		</button>
 	) : (
 		<button
-			className="btn btn--rect-es user-profile__btn-follow"
-			onClick={() => followUser(user_id)}
+		className="btn btn--rect-es user-profile__btn-follow"
+		onClick={() => followUser(user_id)}
 		>
 			Follow
 		</button>
 	);
+	
+	useDocumentTitle(userProfile ? userProfile.username : '');
 
 	return (
 		userProfile && (

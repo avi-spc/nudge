@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import { login } from '../../reduxStore/actions/auth';
 import { useForm } from '../../hooks/useForm';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const LogIn = (props) => {
 	const {
@@ -14,6 +15,8 @@ const LogIn = (props) => {
 	} = props;
 
 	const navigate = useNavigate();
+
+	useDocumentTitle("");
 
 	useEffect(() => {
 		if (!loading && isAuthenticated && personalProfile) {

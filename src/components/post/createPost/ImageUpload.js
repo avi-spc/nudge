@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { uploadPostImage } from '../../../reduxStore/actions/post';
 
 import TitleHeaderBar from '../../headerBars/TitleHeaderBar';
+import { useDocumentTitle } from '../../../hooks/useDcoumentTitle';
 
 const ImageUpload = (props) => {
 	const { uploadPostImage, newPostImageId } = props;
@@ -18,6 +19,8 @@ const ImageUpload = (props) => {
 			navigate('/create/publish');
 		}
 	}, [newPostImageId]);
+
+	useDocumentTitle('New post');
 
 	return (
 		<div className="container-medium padded image-upload">
